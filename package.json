@@ -6,7 +6,7 @@
     "start": "node puppeteer-capture.js"
   },
   "dependencies": {
-    "puppeteer": "^21.3.8",
-    "googleapis": "^118.0.0"
-  }
+  "puppeteer": "^21.3.8",
+  "googleapis": "^133.0.0"
+}
 }
