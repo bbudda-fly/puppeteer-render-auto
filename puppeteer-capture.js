@@ -3,7 +3,11 @@ import fs from 'fs';
 import { google } from 'googleapis';
 
 // [1] Puppeteer로 이미지 캡처
-const browser = await puppeteer.launch({ headless: true });
+const browser = await puppeteer.launch({
+  headless: true,
+  executablePath: '/opt/render/project/src/.cache/puppeteer/chrome/linux-*/chrome',
+  args: ['--no-sandbox', '--disable-setuid-sandbox']
+});
 const page = await browser.newPage();
 
 await page.goto('https://www.showstudio.com/collections/spring-summer-2025/miu-miu?gallery=1&look=1', {
@@ -17,16 +21,13 @@ await browser.close();
 
 // [2] Google Drive 업로드 설정
 const auth = new google.auth.GoogleAuth({
-  keyFile: 'credentials.json', // OAuth JSON 파일명 (리포지토리에 직접 넣지 말고 Render에 환경변수로!)
+  keyFile: '/etc/secrets/credentials.json', // Render에 Secret File로 올린 경로
   scopes: ['https://www.googleapis.com/auth/drive.file'],
 });
-
 const driveService = google.drive({ version: 'v3', auth });
 
 async function uploadFile() {
-  const fileMetadata = {
-    name: filePath,
-  };
+  const fileMetadata = { name: filePath };
   const media = {
     mimeType: 'image/png',
     body: fs.createReadStream(filePath),
