@@ -1,12 +1,14 @@
 {
   "name": "puppeteer-render-auto",
   "version": "1.0.0",
+  "description": "ShowStudio 패션 자동 캡처 프로젝트",
   "main": "puppeteer-capture.js",
   "scripts": {
     "start": "node puppeteer-capture.js"
   },
   "dependencies": {
-  "puppeteer": "^21.3.8",
-  "googleapis": "^133.0.0"
-}
+    "puppeteer": "^21.3.8",
+    "googleapis": "^105.0.0",
+    "fs": "^0.0.1-security"
+  }
 }
