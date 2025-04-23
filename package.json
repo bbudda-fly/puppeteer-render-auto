@@ -4,7 +4,6 @@
   "main": "puppeteer-capture.js",
   "license": "MIT",
   "dependencies": {
-    "puppeteer": "^21.3.8",
-    "googleapis": "^136.0.0"
+    "puppeteer": "^21.11.0"
   }
 }
