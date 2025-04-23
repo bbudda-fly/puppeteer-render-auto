@@ -1,0 +1,13 @@
+{
+  "name": "puppeteer-render-auto",
+  "version": "1.0.0",
+  "main": "puppeteer-capture.js",
+  "type": "module",
+  "scripts": {
+    "start": "node puppeteer-capture.js"
+  },
+  "dependencies": {
+    "puppeteer": "^21.3.8",
+    "googleapis": "^133.0.0"
+  }
+}
