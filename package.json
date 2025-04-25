@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "puppeteer-capture.js",
   "scripts": {
-    "start": "node puppeteer-capture.js"
+    "start": "node puppeteer-capture.js",
+    "postinstall": "npm install puppeteer googleapis"
   },
   "license": "MIT",
   "dependencies": {
